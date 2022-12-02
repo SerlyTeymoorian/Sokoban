@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Sokoban</string>
+    <string name="reset">Do It AGAIN!!</string>
+    <string name="undo">UNDO IT!!!!</string>
+    <string name="help">Game Rules</string>
+    <string name="new_game">START GAME!!!</string>
+    <string name="level_status">LEVEL %1$d  TIME %2$d:%3$02d</string>
+    <string name="win_msg">AWESOME!!! YOU HAVE WON!!!!\NDo you want to move to the next level?</string>
+    <string name="move_next">Lets Go</string>
+    <string name="win_negative">Repeat</string>
+    <string name="win_title" tools:ignore="PluralsCandidate">Level %1$d completed!</string>
+    <string name="continue_game">Continue game</string>
+    <string name="level">Level%1$d</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="help_msg">Sokoban is a classic Warehouse puzzle game from Japan..\nYour task is to move the boxes to their locations.\n\nWhen all boxes are on their points and turned black, you can move to the next level!!!</string>
+    <string name="levels_title">Sokoban Game Levels</string>
+    <string name="label_main_menu">Main Menu</string>
+    <string name="label_choose_level">Choose Level</string>
+    <string name="label_game">Game</string>
+
+</resources>

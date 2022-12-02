@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainMenuFragment">
+
+    <fragment
+        android:id="@+id/MainMenuFragment"
+        android:name="com.bignerdranch.android.sokoban.frag.MainMenuFragment"
+        android:label="@string/label_main_menu"
+        tools:layout="@layout/fragment_main_menu">
+
+        <action
+            android:id="@+id/action_choose_level"
+            app:destination="@id/ChooseLevelFragment" />
+
+        <action
+            android:id="@+id/action_continue_level"
+            app:destination="@id/GameFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChooseLevelFragment"
+        android:name="com.bignerdranch.android.sokoban.frag.ChooseLevelFragment"
+        android:label="@string/label_choose_level"
+        tools:layout="@layout/fragment_choose_level">
+
+        <action
+            android:id="@+id/action_start_level"
+            app:destination="@id/GameFragment">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.bignerdranch.android.sokoban.frag.GameFragment"
+        android:label="@string/label_game"
+        tools:layout="@layout/fragment_game">
+
+        <argument
+            android:name="newGame"
+            app:argType="boolean"
+            />
+        <argument
+            android:name="levelNumber"
+            app:argType="integer"
+            />
+
+    </fragment>
+
+</navigation>

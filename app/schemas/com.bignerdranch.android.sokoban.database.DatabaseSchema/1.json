@@ -1,0 +1,91 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "aaf1c43258bd2cb0ab2cb5d597b9b0fc",
+    "entities": [
+      {
+        "tableName": "gameState",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`time` INTEGER NOT NULL, `levelNumber` INTEGER NOT NULL, `movesList` TEXT NOT NULL, PRIMARY KEY(`levelNumber`))",
+        "fields": [
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelNumber",
+            "columnName": "levelNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "movesList",
+            "columnName": "movesList",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "levelNumber"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "HighScore",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`levelNumber` INTEGER NOT NULL, `time` INTEGER NOT NULL, `moves` INTEGER NOT NULL, `pushes` INTEGER NOT NULL, `levelHash` INTEGER NOT NULL, PRIMARY KEY(`levelNumber`, `levelHash`))",
+        "fields": [
+          {
+            "fieldPath": "levelNumber",
+            "columnName": "levelNumber",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moves",
+            "columnName": "moves",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pushes",
+            "columnName": "pushes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "levelHash",
+            "columnName": "levelHash",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "levelNumber",
+            "levelHash"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'aaf1c43258bd2cb0ab2cb5d597b9b0fc')"
+    ]
+  }
+}
